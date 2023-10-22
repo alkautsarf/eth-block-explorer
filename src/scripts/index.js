@@ -6,13 +6,13 @@ const settings = {
   apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
   network: Network.ETH_MAINNET,
 };
+export const alchemy = new Alchemy(settings);
 
 const provider = new ethers.AlchemyProvider(
   "mainnet",
   process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
-);
-
-const alchemy = new Alchemy(settings);
+  );
+  
 
 export async function getBlockNumber() {
   try {
@@ -110,3 +110,17 @@ export const getLatestTransactions = async (maxTxns = 8) => {
     })
   );
 };
+
+export const getBlockInfo = async (query) => {
+    let blockHashOrBlockTag = query;
+    if (!/0x/.test(query)) blockHashOrBlockTag = Number(query);
+  
+    const blockInfo = await alchemy.core.getBlock(blockHashOrBlockTag);
+    return {
+      ...blockInfo,
+      baseFeePerGas: blockInfo.baseFeePerGas?.toString() || 0,
+      gasLimit: blockInfo.gasLimit?.toString() || 0,
+      gasUsed: blockInfo.gasUsed?.toString() || 0,
+      _difficulty: blockInfo._difficulty?.toString() || 0,
+    };
+  };
