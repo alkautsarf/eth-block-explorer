@@ -30,7 +30,7 @@ export const BlockInfo = ({ blockInfo, gasUsedPercent, gasTarget }) => {
           <h2 className="text-gray-500 col-span-2">Transactions:</h2>
           <h2 className="col-span-10 text-[10px] text-gray-500">
             <span className=" text-xs text-black">
-              {blockInfo.transactions?.length} transactions
+              <Link href={`/tx?block=${blockInfo.number}`}>{blockInfo.transactions?.length} transactions</Link>
             </span>{" "}
             in this block
           </h2>

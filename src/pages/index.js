@@ -2,6 +2,7 @@ import Blocks from "@/components/blocks";
 import Footer from "@/components/footer";
 import InfoBox from "@/components/infoBox";
 import Navbar from "@/components/navbar";
+import Search from "@/components/search";
 import Transactions from "@/components/transactions";
 import { getBlockNumber, getETHPrice, getGasPrice, getLatestBlocks, getLatestTransactions, getMarketCap } from "@/scripts";
 import { Press_Start_2P } from "next/font/google";
@@ -9,10 +10,11 @@ import { useEffect } from "react";
 const start = Press_Start_2P({ subsets: ["latin"], weight: "400" });
 export default function Home({blockNumber, marketCap, ethPrice, blocksInfo, latestTransactions, gasPrice}) {
   return (
-    <div id="main" className={`${start.className} flex justify-center h-[165vh]`}>
+    <div id="main" className={`${start.className} flex justify-center h-[175vh]`}>
       <Navbar />
+      <Search/>
       <InfoBox blockNumber={blockNumber} marketCap={marketCap} ethPrice={ethPrice} gasPrice={gasPrice}/>
-      <div className="w-[85%] h-[100vh] grid grid-cols-2 justify-center absolute border border-black bg-white top-96 mt-[5%]">
+      <div className="w-[85%] h-[100vh] grid grid-cols-2 justify-center absolute border border-black bg-white top-[30rem] mt-[5%]">
       <Blocks blocksInfo={blocksInfo} />
       <Transactions latestTransactions={latestTransactions}/>
       </div>

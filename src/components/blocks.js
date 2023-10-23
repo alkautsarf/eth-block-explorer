@@ -36,9 +36,14 @@ export default function Blocks({ blocksInfo }) {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <h2>Fee Recipient&nbsp; {getShortenAddress(el.miner)}</h2>
               <h2>
-                {el.transactions && el.transactions.length} txns{" "}
+                Fee Recipient&nbsp;{" "}
+                <Link href={`/address/${el.miner}`}>
+                  {getShortenAddress(el.miner)}
+                </Link>
+              </h2>
+              <h2>
+                <Link href={`/tx?block=${el.number}`}>{el.transactions && el.transactions.length} txns </Link>
                 <span className="text-[9px] text-gray-400">in 12 secs</span>
               </h2>
             </div>

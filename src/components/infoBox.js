@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function InfoBox({blockNumber, marketCap, ethPrice, gasPrice}) {
   return (
-    <div id="infoBox" className="w-[85%] h-[175px] grid grid-cols-2 justify-center absolute border border-black bg-white top-64">
+    <div id="infoBox" className="w-[85%] h-[175px] grid grid-cols-2 justify-center absolute border border-black bg-white top-[22rem]">
       <div id="section" className="flex border border-black">
         <div className="flex items-center p-3 gap-3">
           <img

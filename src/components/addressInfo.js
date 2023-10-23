@@ -49,6 +49,7 @@ export const AddressInfo = ({ wallet, transactions, balance }) => {
   };
 
   useEffect(() => {
+    console.log(transactions);
     if (transactions.length) {
       const totalPages = Math.floor(transactions.length / PAGE_SIZE);
       const page = transactions.slice(
@@ -63,7 +64,7 @@ export const AddressInfo = ({ wallet, transactions, balance }) => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [wallet, transactions]);
   const balanceETH = ethers.formatEther(balance.toString());
   return (
     <div className="flex flex-col w-[80%] mt-[15%]">
@@ -114,7 +115,7 @@ export const AddressInfo = ({ wallet, transactions, balance }) => {
             {page.map((transaction) => (
               <tr className="border-b" key={transaction.hash}>
                 <td class="border-t-0 px-6 align-middle whitespace-nowrap p-4 text-left ">
-                  {getShortenAddressEnd(transaction.hash, 15)}
+                  <Link href={`/tx/${transaction.hash}`}>{getShortenAddressEnd(transaction.hash, 15)}</Link>
                 </td>
                 <td class="border-t-0 px-6 align-middle whitespace-nowrap p-4">
                   <Link href={`/block/${parseInt(transaction.blockNum)}`}>

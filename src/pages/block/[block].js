@@ -6,10 +6,6 @@ import { useEffect } from "react";
 const start = Press_Start_2P({ subsets: ["latin"], weight: "400" });
 
 export default function Block({blockInfo, error}) {
-  useEffect(() => {
-    console.log(blockInfo)
-    console.log(error)
-  },[])
   const gasUsedPercent = ((blockInfo.gasUsed / blockInfo.gasLimit) * 100).toFixed(2);
   let gasTarget = (100 - (blockInfo.gasUsed / 15000000) * 100).toFixed(2);
   gasTarget = gasTarget <= 0 ? 100 : -gasTarget;
