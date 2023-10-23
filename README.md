@@ -54,4 +54,4 @@ BlockScanner is a blockchain explorer app developed as part of my assessment for
 I would like to express my gratitude to [AlSirang](https://github.com/AlSirang) for generously permitting me to use his code as a reference and make a few adjustments to it. Thank you!
 
 
-## Live App: https://eth-block-explorer-iota.vercel.app
+#### Live App: https://eth-block-explorer-iota.vercel.app
