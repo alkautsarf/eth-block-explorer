@@ -2,7 +2,7 @@ This project is part of [Alchemy University](https://university.alchemy.com)'s E
 
 # Blockscanner
 
-BlockScanner is a blockchain explorer app developed as part of my assessment for Alchemy University. It is heavily influenced by etherscan and AlSirang's take on blockchain explorer [Blockchain Explorer](https://github.com/AlSirang/blockchain-explorer).
+BlockScanner is a blockchain explorer app developed as part of my assessment for Alchemy University. It is heavily influenced by etherscan and [AlSirang](https://github.com/AlSirang)'s take on blockchain explorer [Blockchain Explorer](https://github.com/AlSirang/blockchain-explorer).
 
 ## Setup
 
